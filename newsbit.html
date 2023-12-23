@@ -42,6 +42,7 @@
 
     <div id="news">
     <section class="content">
+        <a href="newselon.html">
 
         <section class="intro-h-600px">
 
@@ -59,6 +60,7 @@
                         </ul>
                     </section>
                 </section>
+            </a>
 
 
                 <section class="intro-1-3-col intro-h-100">
@@ -237,6 +239,42 @@
             </aside>
         
             
+            <style>
+                .crypto-container {
+                    position: relative;
+                    display: inline-block;
+                    margin: 20px;
+                    padding: 30px;
+                    background-color: blue; /* Adjust the color as needed */
+                    border: 2px solid black; /* Contour color, adjust as needed */
+                    border-radius: 20px; /* Adjust the border-radius as needed */
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adjust the box shadow as needed */
+                }
+            
+                .crypto-container:before,
+                .crypto-container:after {
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    border-left: 20px solid transparent;
+                    border-right: 20px solid transparent;
+                }
+            
+                .crypto-container:before {
+                    border-bottom: 37px solid black; /* Contour color, adjust as needed */
+                    z-index: 1;
+                    top: -15px; /* Adjust as needed */
+                    left: -15px; /* Adjust as needed */
+                }
+            
+                .crypto-container:after {
+                    border-bottom: 37px solid white; /* Background color, adjust as needed */
+                    z-index: 2;
+                    top: -20px; /* Adjust as needed */
+                    left: -20px; /* Adjust as needed */
+                }
+            </style>
+            
             <script>
                 async function fetchCryptoPrices() {
                     try {
@@ -255,6 +293,10 @@
                         cryptoPriceList.innerHTML = Object.entries(cryptoPrices)
                             .map(([crypto, price]) => `<li><b>1 ${crypto.toUpperCase()} = $${price}</b></li>`)
                             .join('');
+            
+                        // Apply styling to the dynamically generated container
+                        cryptoPriceList.className = 'crypto-container';
+            
                     } catch (error) {
                         console.error('Error fetching crypto prices:', error);
                     }
@@ -265,6 +307,8 @@
                 // Fetch crypto prices every 5 min (adjust the interval as needed)
                 setInterval(fetchCryptoPrices, 300000); // 5 min in milliseconds
             </script>
+            
+            
             
 
 
@@ -286,13 +330,10 @@
 
             <section class="footer-col">
                 <img src="./assets/images/logo-white.png" alt="newsBit Logo" class="footer-logo">
-                <p class="footer-p">
-                    Bit coin is an open-source, peer-to-peer, digital decentralized cryptocurrency.
-                    Powered by blockchain technology, its defining characteristic is</p>
                 <p class="footer-p copyright">
-                    Copyright ©2022 All rights reserved | This template is made with
+                    Copyright ©2023 Tous droits réservés | CyberInfo HUB
                     <i class="icon-heart" aria-hidden="true"></i> by
-                    <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <a href="https://instagram.com/allsine.eth" target="_blank">Allsine</a>
                 </p>
             </section>
 
@@ -329,9 +370,6 @@
         <section class="footer-row">
             <nav class="footer-nav">
                 <ul class="footer-list">
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy policy</a></li>
-                    <li><a href="#">Jobs advertising</a></li>
                     <li><a href="#">Contact us</a></li>
                 </ul>
             </nav>
